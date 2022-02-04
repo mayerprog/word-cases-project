@@ -8,11 +8,11 @@ const UPDATE_NEW_WORD = 'UPDATE_NEW_WORD'
 
 let initialState = {
     word: [],
-    newWordText: 'ыыы'
+    newWordText: ''
 }
 
 const caseReducer = (state = initialState, action) => {
-    debugger;
+
     switch (action.type) {
         case NOMINATIVE_CHANGE:
             return state;
@@ -46,7 +46,8 @@ const caseReducer = (state = initialState, action) => {
             };*/
         case UPDATE_NEW_WORD:
             state.newWordText = action.text;
-            return state;
+            return state
+
         default:
             return state
     }
