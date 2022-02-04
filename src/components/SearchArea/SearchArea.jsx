@@ -36,7 +36,7 @@ const SearchArea = (props) => {
                 <textarea placeholder={"Enter your message"} />
             </div>
             <div>
-                <button>>Send</button>
+                <button>Send</button>
             </div>
             <select name="cases">
                 <option value="1">Именительный</option>
