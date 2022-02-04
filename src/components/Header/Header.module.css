@@ -1,0 +1,16 @@
+.header {
+    /*
+    grid-area: h;
+    */
+    background-color: beige;
+}
+.header img{
+    float: left;
+    margin-right: 15px;
+    width: 80px;
+
+}
+
+.header h1 {
+    color: chocolate;
+}
