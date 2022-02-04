@@ -6,18 +6,20 @@ const INSTRUMENTAL_CHANGE = 'INSTRUMENTAL_CHANGE';
 const PREPOSITIONAL_CHANGE = 'PREPOSITIONAL_CHANGE';
 const UPDATE_NEW_WORD = 'UPDATE_NEW_WORD'
 
-/*let initialState = {
-    word: []
-}*/
+let initialState = {
+    word: [],
+    newWordText: 'ыыы'
+}
 
-const caseReducer = (state, action) => {
+const caseReducer = (state = initialState, action) => {
+    debugger;
     switch (action.type) {
         case NOMINATIVE_CHANGE:
             return state;
 
         case GENITIVE_CHANGE:
             let toArray = state.split('')
-            if (toArray.length - 1 === 'a') {
+            if (toArray[toArray.length - 1] === 'a') {
                 toArray.splice(toArray.length - 1,1, 'ы')
                 state = toArray.join('')
             }
@@ -43,7 +45,7 @@ const caseReducer = (state, action) => {
 
             };*/
         case UPDATE_NEW_WORD:
-            state = action.text
+            state.newWordText = action.text;
             return state;
         default:
             return state

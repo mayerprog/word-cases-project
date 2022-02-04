@@ -3,7 +3,6 @@ import caseReducer from "./case-reducer";
 
 let reducers = combineReducers({
     caseChange: caseReducer,
-
 });
 
 const store = createStore(reducers);

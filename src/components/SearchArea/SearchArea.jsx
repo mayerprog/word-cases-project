@@ -30,13 +30,18 @@ import s from "./SearchArea.module.css";
     );
 };*/
 const SearchArea = (props) => {
+
+    let textOnchange = (e) => {
+        let text = e.target.value
+        props.updateNewWord(text)
+    }
     return (
         <div className={s.position}>
             <div>
-                <textarea placeholder={"Enter your message"} />
+                <textarea value={props.newWordText} placeholder={"Enter your message"} onChange={textOnchange}/>
             </div>
             <div>
-                <button>Send</button>
+                <button onClick={props.genitiveChange}>Send</button>
             </div>
             <select name="cases">
                 <option value="1">Именительный</option>
@@ -46,6 +51,8 @@ const SearchArea = (props) => {
                 <option value="5">Творительный</option>
                 <option value="6">Предложный</option>
             </select>
+
+            <div>{props.word}</div>
         </div>
     );
 };
