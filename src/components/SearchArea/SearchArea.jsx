@@ -12,9 +12,10 @@ const SearchArea = (props) => {
                 <textarea value={props.caseChange.newWordText} placeholder={"Enter your message"} onChange={textOnchange}/>
             </div>
             <div>
-                <button onClick={props.genitiveChange}>Send</button>
+                <button onClick={props.genitiveChange}>Поиск</button>
             </div>
-            <select name="cases">
+            <div><h1>{props.caseChange.word}</h1></div>
+            <select name="cases" value={props.caseChange.caseId}>
                 <option value="1">Именительный</option>
                 <option value="2">Родительный</option>
                 <option value="3">Дательный</option>
@@ -22,8 +23,6 @@ const SearchArea = (props) => {
                 <option value="5">Творительный</option>
                 <option value="6">Предложный</option>
             </select>
-
-            <div>{props.word}</div>
         </div>
     );
 };

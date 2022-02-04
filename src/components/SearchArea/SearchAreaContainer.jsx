@@ -11,7 +11,7 @@ import {
 
 const mapStateToProps = (state) => {
     return {
-        caseChange: state.caseChange
+        caseChange: state
     }
 }
 const mapDispatchToProps = (dispatch) => {

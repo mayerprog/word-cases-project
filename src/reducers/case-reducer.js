@@ -7,26 +7,24 @@ const PREPOSITIONAL_CHANGE = 'PREPOSITIONAL_CHANGE';
 const UPDATE_NEW_WORD = 'UPDATE_NEW_WORD'
 
 let initialState = {
-    word: [],
+    word: '',
     newWordText: ''
 }
 
 const caseReducer = (state = initialState, action) => {
-
     switch (action.type) {
         case NOMINATIVE_CHANGE:
-            return state;
+            return state.newWordText;
 
         case GENITIVE_CHANGE:
-            let toArray = state.split('')
-            if (toArray[toArray.length - 1] === 'a') {
+            let toArray = state.newWordText.split('')
+            if (toArray[toArray.length - 1] == 'а') {
                 toArray.splice(toArray.length - 1,1, 'ы')
-                state = toArray.join('')
             }
             else {
                 toArray.splice(toArray.length - 1,1, 'и')
-                state = toArray.join('')
             }
+            state.word = toArray.join('')
             return state
         /*case DATIVE_CHANGE:
             return {
@@ -53,12 +51,12 @@ const caseReducer = (state = initialState, action) => {
     }
 }
 
-export const nominativeActionCreator = (text) => ({type: NOMINATIVE_CHANGE, text})
-export const genitiveActionCreator = (text) => ({type: GENITIVE_CHANGE, text})
-export const dativeActionCreator = (text) => ({type: DATIVE_CHANGE, text})
-export const accusativeActionCreator = (text) => ({type: ACCUSATIVE_CHANGE, text})
-export const instrumentalActionCreator = (text) => ({type: INSTRUMENTAL_CHANGE, text})
-export const prepositionalActionCreator = (text) => ({type: PREPOSITIONAL_CHANGE, text})
+export const nominativeActionCreator = () => ({type: NOMINATIVE_CHANGE})
+export const genitiveActionCreator = () => ({type: GENITIVE_CHANGE})
+export const dativeActionCreator = () => ({type: DATIVE_CHANGE})
+export const accusativeActionCreator = () => ({type: ACCUSATIVE_CHANGE})
+export const instrumentalActionCreator = () => ({type: INSTRUMENTAL_CHANGE})
+export const prepositionalActionCreator = () => ({type: PREPOSITIONAL_CHANGE})
 export const updateNewWordActionCreator = (text) => ({type: UPDATE_NEW_WORD, text})
 
 
