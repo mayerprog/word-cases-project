@@ -5,7 +5,7 @@ import {
     accusativeActionCreator,
     dativeActionCreator,
     genitiveActionCreator, instrumentalActionCreator,
-    nominativeActionCreator, prepositionalActionCreator, updateNewWordActionCreator
+    nominativeActionCreator, prepositionalActionCreator, updateCaseIdActionCreator, updateNewWordActionCreator
 } from "../../reducers/case-reducer";
 
 
@@ -16,13 +16,14 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        nominativeChange: (text) => dispatch(nominativeActionCreator(text)),
-        genitiveChange: (text) => dispatch(genitiveActionCreator(text)),
-        dativeChange: (text) => dispatch(dativeActionCreator(text)),
-        accusativeChange: (text) => dispatch(accusativeActionCreator(text)),
-        instrumentalChange: (text) => dispatch(instrumentalActionCreator(text)),
-        prepositionalChange: (text) => dispatch(prepositionalActionCreator(text)),
-        updateNewWord: (text) => dispatch(updateNewWordActionCreator(text))
+        nominativeChange: () => dispatch(nominativeActionCreator()),
+        genitiveChange: () => dispatch(genitiveActionCreator()),
+        dativeChange: () => dispatch(dativeActionCreator()),
+        accusativeChange: () => dispatch(accusativeActionCreator()),
+        instrumentalChange: () => dispatch(instrumentalActionCreator()),
+        prepositionalChange: () => dispatch(prepositionalActionCreator()),
+        updateNewWord: (text) => dispatch(updateNewWordActionCreator(text)),
+        updateCaseId: (id) => dispatch(updateCaseIdActionCreator(id))
     }
 }
 
