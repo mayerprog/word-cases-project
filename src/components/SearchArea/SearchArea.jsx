@@ -50,7 +50,7 @@ const SearchArea = (props) => {
                     <option value="5">Творительный</option>
                     <option value="6">Предложный</option>
                 </select>
-                <div>{String(props.caseChange.caseChange.word)}</div>
+                <div className={s.p}>{props.caseChange.caseChange.word}</div>
             </div>
 
         </div>
