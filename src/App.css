@@ -1,0 +1,17 @@
+.app-wrapper {
+  display: grid; /* значит, что все первые потомки, которые лежат в диве с classname app-wrapper, будут вести себя как грид элементы*/
+  width: 20000px;
+  margin: 0 auto;
+  grid-template-areas: /* по какому шаблону выстроены areas */
+          "h h" /* значит, что в первой строке мы займем 2 колонки */
+          "c c";
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 2fr 10fr;
+  /* grid-gap: 10px; */
+}
+
+.app-wrapper-content {
+  grid-area: c;
+  background-size: 100%;
+  justify-content: center;
+}
